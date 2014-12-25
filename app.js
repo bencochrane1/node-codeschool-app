@@ -10,4 +10,8 @@ app.post('/', badges.save, badges.send, function(req, res){
     res.send('\ndone\n\n');
 });
 
-app.listen(8000, console.log);
+app.get('/badges', badges.get);
+
+app.listen(8000, function(){
+    console.log('Server is listening on port %d', 8000);
+});
